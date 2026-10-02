@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football Wordle</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div id="difficulty-screen" class="difficulty-screen">
+
+    <div class="difficulty-container">
+
+        <div class="difficulty-intro">
+
+            <div class="football-icon">
+                <h1>FOOTBALL WORDLE ⚽</h1>
+            </div>
+
+            <p class="main-subtitle">
+                Think you know football? <strong>Prove it.</strong>
+            </p>
+
+            <p class="game-description">
+                Identify the mystery player using clues about their
+                nationality, league, club, position, age, and shirt number.
+            </p>
+
+        </div>
+
+        <div class="difficulty-heading">
+
+            <span class="heading-line"></span>
+
+            <h2>CHOOSE YOUR CHALLENGE</h2>
+
+            <span class="heading-line"></span>
+
+        </div>
+
+        <div class="difficulty-options">
+
+            <button class="difficulty-card easy" id="easy"
+                    data-difficulty="easy">
+
+                <div class="difficulty-icon">
+                    🟢
+                </div>
+
+                <h3>Rookie</h3>
+
+                <span class="difficulty-name">
+                    EASY
+                </span>
+
+                <p>
+                    A relaxed challenge for getting started.
+                    More attempts, more time, and helpful clues.
+                </p>
+
+                <div class="difficulty-stats">
+
+                    <div>
+                        <strong>15</strong>
+                        <span>Attempts</span>
+                    </div>
+
+                    <div>
+                        <strong>90s</strong>
+                        <span>Time</span>
+                    </div>
+
+                    <div>
+                        <strong>3</strong>
+                        <span>Hints</span>
+                    </div>
+
+                </div>
+
+                <span class="start-text">
+                    START GAME →
+                </span>
+
+            </button>
+
+            <button class="difficulty-card medium" id="medium"
+                    data-difficulty="medium">
+
+                <div class="popular-badge">
+                    ⭐ MOST POPULAR
+                </div>
+
+                <div class="difficulty-icon">
+                    🟡
+                </div>
+
+                <h3>Pro</h3>
+
+                <span class="difficulty-name">
+                    MEDIUM
+                </span>
+
+                <p>
+                    The perfect balance of speed and skill.
+                    Fewer attempts and less time to find the player.
+                </p>
+
+                <div class="difficulty-stats">
+
+                    <div>
+                        <strong>10</strong>
+                        <span>Attempts</span>
+                    </div>
+
+                    <div>
+                        <strong>60s</strong>
+                        <span>Time</span>
+                    </div>
+
+                    <div>
+                        <strong>2</strong>
+                        <span>Hints</span>
+                    </div>
+
+                </div>
+
+                <span class="start-text">
+                    START GAME →
+                </span>
+
+            </button>
+
+            <button class="difficulty-card hard" id="hard"
+                    data-difficulty="hard">
+
+                <div class="difficulty-icon">
+                    🔴
+                </div>
+
+                <h3>Legend</h3>
+
+                <span class="difficulty-name">
+                    HARD
+                </span>
+
+                <p>
+                    Only for true football experts.
+                    Limited attempts, less time, and tougher players.
+                </p>
+
+                <div class="difficulty-stats">
+
+                    <div>
+                        <strong>7</strong>
+                        <span>Attempts</span>
+                    </div>
+
+                    <div>
+                        <strong>45s</strong>
+                        <span>Time</span>
+                    </div>
+
+                    <div>
+                        <strong>1</strong>
+                        <span>Hints</span>
+                    </div>
+
+                </div>
+
+                <span class="start-text">
+                    START GAME →
+                </span>
+
+            </button>
+
+        </div>
+
+        <div class="difficulty-tip">
+
+            <span>💡</span>
+
+            <p>
+                <strong>Tip:</strong>
+                Start with nationality and league, then use the club,
+                position, age, and shirt number to narrow down your guess.
+            </p>
+
+        </div>
+
+        <p class="bottom-message">
+            Every clue gets you closer. Every guess counts.
+            <br>
+            <strong>Can you identify the player before time runs out?</strong>
+        </p>
+
+    </div>
+
+</div>
+
+<div id="game-page">
+
+<header>
+
+    <p id="timer"></p>
+
+    <p id="attempts">Attempts: </p>
+
+    <h1>⚽ Football Wordle</h1>
+
+    <p>Guess the football player</p>
+
+</header>
+
+<button id="back-btn">← Back</button>
+
+<div class="helping-btns">
+
+    <button id="hintbtn">Hint</button>
+
+    <button id="revealbtn">Reveal</button>
+
+</div>
+
+<div id="hintbox"></div>
+
+<main>
+
+<section class="game-box">
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="player-input"
+            placeholder="Enter player name">
+
+        <div id="suggestions"></div>
+
+    </div>
+
+    <div class="history">
+
+        <div class="guess-header">
+
+            <div>Player</div>
+
+            <div>Nationality</div>
+
+            <div>League</div>
+
+            <div>Club</div>
+
+            <div>Position</div>
+
+            <div>Age</div>
+
+            <div>No.</div>
+
+        </div>
+
+        <div id="guess-container">
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<div id="win-box" class="win-box">
+
+    <h2 id="guess-text">Perfect Guess!</h2>
+
+    <p id="try-text">You discovered the player 🎉</p>
+
+    <p id="verifyplayer">
+        The correct player was:
+        <span id="playername"></span>
+    </p>
+
+    <button id="play-again">
+        Play Again
+    </button>
+
+</div>
+
+</div>
+
+<script src="players.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
+
