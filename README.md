@@ -47,7 +47,7 @@ A football-themed guessing game where players test their knowledge of footballer
 
 ## 🔗 Links
 
-* **Live Demo:**
+* **Live Demo:** https://football-wordle1.netlify.app
 * **GitHub Repository:** https://github.com/siemg22/Football-Wordle
 
 ## 👨‍💻 Author
