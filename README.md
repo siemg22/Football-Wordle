@@ -21,13 +21,9 @@ A football-themed guessing game where players test their knowledge of footballer
 ## 📸 Screenshots
 
 ### Difficulty Selection
-
-![Football Wordle Difficulty Selection](football%20wordle%201.jpg)
-
-### Gameplay
-
 ![Football Wordle Gameplay](football%20wordle%202.jpg)
-
+### Gameplay
+![Football Wordle Difficulty Selection](football%20wordle%201.jpg)
 
 
 ## 🚀 Getting Started
